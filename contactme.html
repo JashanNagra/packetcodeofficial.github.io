@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <link rel="stylesheet" href="base1.css" />
+    <meta charset="utf-8" />
+    <title>Contact Me</title>
+  </head>
+  <body>
+<script type="text/javascript">
+
+function show() {
+
+document.getElementById('ordernumber').style.display = 'block';
+
+}
+
+function hide() {
+
+document.getElementById('ordernumber').style.display = 'none';
+
+}
+
+
+ 
+
+function setname() {
+
+  var x = document.getElementById("fname").value;
+
+  document.getElementById("studID").value = x;
+
+}
+
+</script>
+
+</head>
+
+
+ 
+
+<body>
+
+
+ 
+
+<h1>Contact me form</h1>
+
+
+ 
+
+<form action="https://httpbin.org/post" method="post">
+
+
+ 
+
+  <label for="fname">Name:</label>
+
+  <input type="text" id="fname" name="fname" pattern="/^[a-zA-Z'- ]+$/{1,255}" required><br><br>
+ 
+  
+
+  <label for="email">Email Address:</label>
+
+  <input type="email" id="email" name="email" required><br><br>
+
+  
+
+  <label for="address">Address:</label><br>
+
+  <textarea rows="2" cols="25" name="address" required></textarea><br><br>
+
+  
+
+  <label for="City">City:</label>
+
+  <input list="Cities" name="City" id="City" required><br><br>
+
+  <datalist id="Cities">
+
+    <option value="Toronto">
+    <option value="Brampton">
+    <option value="Montreal">
+    <option value="Hamilton">
+    <option value="Calgary">
+    <option value="Surrey">
+    <option value="Winnipeg">
+    <option value="London">
+  </option>
+  </datalist>
+
+  
+
+  <label for="postal">Postal Code:</label>
+
+  <input type="text" id="postal" name="postal" pattern="^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$" required><br><br>
+
+  
+
+  <label for="about" required>What is this about?:</label>
+
+  <input type="radio" id="question" name="about" value="Question"  onchange="hide()" required>
+
+  <label for="question">Question</label>
+
+  <input type="radio" id="comment" name="about" value="Comment" onchange="hide()">
+
+  <label for="comment">Comment</label>
+
+  <input type="radio" id="hiring" name="about" value="hiring" onchange="show()">
+
+  <label for="hiring">Hiring</label><br><br>
+
+  
+
+  <div id="hiring" style="display: none">
+
+   <label for="HIRING">Enter your message here:</label>
+
+   <input type="number" id="hiring" name="HIRING"><br><br>
+
+  </div>
+
+  
+
+  <label for="message">Message:</label><br>
+
+  <textarea rows="5" cols="50" name="message"  required></textarea><br><br>
+
+  
+
+  <input type="hidden" id="studID" name="studID" value="">  
+
+  <input type="submit" value="Submit" onclick="setname()">
+
+</form>
+</body>
+</html>
